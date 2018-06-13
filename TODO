@@ -1,0 +1,13 @@
+Things to sort
+
+* duplicate current fixed-in field to found-in
+  * needs another join table
+  * don't filter on 'open' for found-in
+* Add fields to json api
+* make single select into multi-select
+* add controller views to edit/create releases
+* add permissions to edit/create releases
+
+* option - modal to create releases on the issue edit page
+
+
