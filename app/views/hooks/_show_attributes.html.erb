@@ -1,0 +1,14 @@
+<% releases = issue.releases %>
+<% unless releases.empty? %>
+<tr>
+  <td>
+      <b>
+        <%# copy permissions system from redmine-vote later %>
+        <%= l :label_fixed_release %>:
+      </b>
+  </td>
+  <td>
+    <%= content_tag('span', releases.map(&:name).join(', '), :class => 'fixed-release') %>
+  </td>
+</tr>
+<% end %>

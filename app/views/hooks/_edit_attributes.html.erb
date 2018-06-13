@@ -1,0 +1,3 @@
+<p>
+  <%= form.select(:releases, options_for_select(issue.project.releases.select{|r| r.open?}.map(&:name), issue.releases.first), include_blank: true) %>
+</p>

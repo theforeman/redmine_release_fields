@@ -1,0 +1,35 @@
+<h2>Open Releases</h2>
+
+<table>
+  <tr>
+    <th>Release</th>
+    <th>Project</th>
+    <th>Status</th>
+  </tr>
+  <% @open_releases.sort_by{|x| [x.name,x.project.name]}.each do |release| %>
+  <tr>
+    <td><%= release.name %></td>
+    <td><%= release.project.name %></td>
+    <td><%= release.status %></td>
+  </tr>
+<% end %>
+</table>
+
+<hr/>
+
+<h2>Closed Releases</h2>
+
+<table>
+  <tr>
+    <th>Release</th>
+    <th>Project</th>
+    <th>Status</th>
+  </tr>
+<% @closed_releases.sort_by{|x| x.project.name}.each do |release| %>
+  <tr>
+    <td><%= release.name %></td>
+    <td><%= release.project.name %></td>
+    <td><%= release.status %></td>
+  </tr>
+<% end %>
+</table>
