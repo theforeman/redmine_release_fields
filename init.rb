@@ -1,5 +1,4 @@
 require_dependency 'issue_patch'
-require_dependency 'project_patch'
 require_dependency 'releases_hook_listener'
 
 Redmine::Plugin.register :release_fields do

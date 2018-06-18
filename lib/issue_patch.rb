@@ -9,7 +9,8 @@ module IssuePatch
     base.class_eval do
       unloadable
 
-      base.has_and_belongs_to_many :releases
+      base.has_and_belongs_to_many :fixed_versions, join_table: 'issues_versions_fixed', class_name: 'Version'
+      base.has_and_belongs_to_many :found_versions, join_table: 'issues_versions_found', class_name: 'Version'
 
     end
   end
