@@ -1,3 +1,12 @@
 <p>
-  <%= form.select(:releases, options_for_select(issue.project.releases.select{|r| r.open?}.map(&:name), issue.releases.first), include_blank: true) %>
+  <% findable_versions = issue.project.versions.collect {|v| [ v.name, v.id ] } %>
+  <%= form.select(:found_versions, options_for_select(findable_versions, issue.found_versions.map(&:id)),
+                  {},
+                  {:multiple => true}) %>
+</p>
+<p>
+  <% fixable_versions = issue.project.versions.select{|v| v.open?}.collect {|v| [ v.name, v.id ] } %>
+  <%= form.select(:fixed_versions, options_for_select(fixable_versions, issue.fixed_versions.map(&:id)),
+                  {},
+                  {:multiple => true}) %>
 </p>

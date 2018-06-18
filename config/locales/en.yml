@@ -1,3 +1,6 @@
 # English strings go here for Rails i18n
 en:
-  label_fixed_release: Fixed In Releases
+  label_found_versions: Found In Versions
+  label_fixed_versions: Fixed In Versions
+  field_found_versions: Found In Versions
+  field_fixed_versions: Fixed In Versions

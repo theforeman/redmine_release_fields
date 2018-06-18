@@ -1,14 +1,27 @@
-<% releases = issue.releases %>
-<% unless releases.empty? %>
+<% unless issue.found_versions.empty? %>
 <tr>
   <td>
       <b>
         <%# copy permissions system from redmine-vote later %>
-        <%= l :label_fixed_release %>:
+        <%= l :label_found_versions %>:
       </b>
   </td>
   <td>
-    <%= content_tag('span', releases.map(&:name).join(', '), :class => 'fixed-release') %>
+    <%= content_tag('span', issue.found_versions.map(&:name).join(', '), :class => 'fixed-versions') %>
+  </td>
+</tr>
+<% end %>
+
+<% unless issue.fixed_versions.empty? %>
+<tr>
+  <td>
+      <b>
+        <%# copy permissions system from redmine-vote later %>
+        <%= l :label_fixed_versions %>:
+      </b>
+  </td>
+  <td>
+    <%= content_tag('span', issue.fixed_versions.map(&:name).join(', '), :class => 'fixed-versions') %>
   </td>
 </tr>
 <% end %>
